@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace BoolKyBookMVCNet5.Data
+namespace BoolKyBookMVCNet5.DataAcceess.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

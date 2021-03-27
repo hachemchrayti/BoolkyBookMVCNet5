@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BoolKyBookMVCNet5.Models;
+using BoolKyBookMVCNet5.Models.ViewsModels;
 
 namespace BoolKyBookMVCNet5.Controllers
 {

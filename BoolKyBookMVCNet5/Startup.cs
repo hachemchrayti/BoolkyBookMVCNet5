@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
-using BoolKyBookMVCNet5.Data;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using BoolKyBookMVCNet5.DataAcceess.Data;
 
 namespace BoolKyBookMVCNet5
 {
