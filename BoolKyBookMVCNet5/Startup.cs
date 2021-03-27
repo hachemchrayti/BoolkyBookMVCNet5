@@ -28,9 +28,17 @@ namespace BoolKyBookMVCNet5
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //    options.UseSqlite(
+            //        Configuration.GetConnectionString("DefaultConnection")));
+
+            // services.AddDbContextPool<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(
-                    Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(
+        Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("BulkyBook.DataAccess")));
+
+
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
@@ -45,7 +53,7 @@ namespace BoolKyBookMVCNet5
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseMigrationsEndPoint();
+                // app.UseMigrationsEndPoint();
             }
             else
             {

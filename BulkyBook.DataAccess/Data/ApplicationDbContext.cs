@@ -11,6 +11,8 @@ namespace BoolKyBookMVCNet5.DataAcceess.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+
+
         }
     }
 }
