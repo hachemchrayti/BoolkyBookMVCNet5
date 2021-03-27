@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BulkyBook.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,5 +15,7 @@ namespace BoolKyBookMVCNet5.DataAcceess.Data
 
 
         }
+
+        public DbSet<Category> Categories { get; set; }
     }
 }

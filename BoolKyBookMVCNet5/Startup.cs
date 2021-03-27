@@ -35,8 +35,8 @@ namespace BoolKyBookMVCNet5
             // services.AddDbContextPool<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(
-        Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("BulkyBook.DataAccess")));
+            options.UseSqlServer(
+        Configuration.GetConnectionString("DefaultConnection"), x => x.MigrationsAssembly("BulkyBook.DataAccess")));
 
 
             services.AddDatabaseDeveloperPageExceptionFilter();
