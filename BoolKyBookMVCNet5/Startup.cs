@@ -13,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BoolKyBookMVCNet5.DataAcceess.Data;
+using BulkyBook.DataAccess.Repository.IRepository;
+using BulkyBook.DataAccess.Repository;
 
 namespace BoolKyBookMVCNet5
 {
@@ -44,7 +46,11 @@ namespace BoolKyBookMVCNet5
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews();
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +59,7 @@ namespace BoolKyBookMVCNet5
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                // app.UseMigrationsEndPoint();
+                app.UseMigrationsEndPoint();
             }
             else
             {
