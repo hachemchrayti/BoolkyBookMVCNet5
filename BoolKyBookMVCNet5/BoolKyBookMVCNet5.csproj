@@ -39,5 +39,8 @@
     <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Areas\Admin\Views\Category\" />
     <Folder Include="Areas\Admin\Views\CoverType\" />
+    <Folder Include="Areas\Admin\Views\Product\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\images\products\" />
   </ItemGroup>
 </Project>
