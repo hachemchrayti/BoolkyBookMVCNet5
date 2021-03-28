@@ -15,6 +15,8 @@ using Microsoft.Extensions.Hosting;
 using BoolKyBookMVCNet5.DataAcceess.Data;
 using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBook.DataAccess.Repository;
+using BulkyBook.Utility;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace BoolKyBookMVCNet5
 {
@@ -41,15 +43,19 @@ namespace BoolKyBookMVCNet5
         Configuration.GetConnectionString("DefaultConnection"), x => x.MigrationsAssembly("BulkyBook.DataAccess")));
 
 
-            services.AddDatabaseDeveloperPageExceptionFilter();
+            //services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-
+            services.AddSingleton<IEmailSender, EmailSender>();
+            services.AddRazorPages();
 
         }
 
