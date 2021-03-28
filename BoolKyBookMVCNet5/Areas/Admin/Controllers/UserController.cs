@@ -4,11 +4,13 @@ using BulkyBook.Models;
 using Microsoft.AspNetCore.Mvc;
 using BoolKyBookMVCNet5.DataAcceess.Data;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Authorization;
+using BulkyBook.Utility;
 
 namespace BoolKyBookMVCNet5.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Employee)]
     public class UserController : Controller
     {
         private readonly ApplicationDbContext _db;
