@@ -25,5 +25,10 @@ namespace BoolKyBookMVCNet5.DataAcceess.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         public DbSet<Company> Companies { get; set; }
+
+
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+        public DbSet<OrderHeader> OrderHeaders { get; set; }
+        public DbSet<OrderDetails> OrderDetails { get; set; }
     }
 }
